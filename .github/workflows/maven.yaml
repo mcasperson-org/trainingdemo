@@ -43,7 +43,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - run: |
         pack build --builder heroku/buildpacks:20 mcasperson/trainingexample:${{ steps.determine_version.outputs.semVer }}
-		    docker image tag mcasperson/trainingexample:${{ steps.determine_version.outputs.semVer }} mcasperson/trainingexample:latest
+        docker image tag mcasperson/trainingexample:${{ steps.determine_version.outputs.semVer }} mcasperson/trainingexample:latest
         docker push mcasperson/trainingexample:${{ steps.determine_version.outputs.semVer }}
       shell: bash
       
